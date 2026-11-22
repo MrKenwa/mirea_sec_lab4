@@ -1,0 +1,13 @@
+{{define "login"}}
+{{template "header" .}}
+<h1>Задание 3. Защищённая авторизация</h1>
+<p>После пяти ошибок учётная запись блокируется.</p>
+
+<form action="/vulnerabilities/brute/" method="get">
+    <p><label>Логин <input name="username" maxlength="64" autocomplete="username" required></label></p>
+    <p><label>Пароль <input name="password" type="password" maxlength="1024" autocomplete="current-password" required></label></p>
+    <input type="hidden" name="user_token" value="{{.Token}}">
+    <button name="Login" value="Login">Войти</button>
+</form>
+{{template "footer" .}}
+{{end}}

@@ -1,0 +1,7 @@
+{{define "protected"}}
+{{template "header" .}}
+<h1>Личный кабинет</h1>
+<p>Вы вошли как {{.Username}}</p>
+<a href="/logout/?user_token={{.Token}}">Выйти</a>
+{{template "footer" .}}
+{{end}}
